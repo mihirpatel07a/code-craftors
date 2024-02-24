@@ -81,7 +81,70 @@ export const getsingleTour = async (req, res) => {
 
 export const getallTours = async (req, res) => {
   try {
-    const tours = await Tour.find();
+
+    const page = parseInt(req.query.page);
+     
+    console.log(page);
+
+
+    const tours = await Tour.find({}).skip(page*8).limit(8);
+
+    res
+      .status(200)
+      .json({
+        success: true,
+        message: "successfully get all tours",
+        data: tours,
+      });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+export const getTourBySearch = async (req , res) => {
+
+  const city = new RegExp(req.query.city );
+  const distance = parseInt(req.query.distance);
+  const maxGroupSize = parseInt(req.query.maxGroupSize);
+
+  try{
+       const tours = await Tour.find({city , distance : {$gte: distance} , maxGroupSize : {$gte : maxGroupSize}})
+
+       if(!tours)
+       {
+        return res.status(500).json({ success: false, message: "not exist" });
+
+       }
+
+       else
+       {
+        res
+        .status(200)
+        .json({
+          success: true,
+          message: "successfully get all tours",
+          data: tours,
+        });
+       }
+     
+      }
+  catch(error)
+  {
+    res.status(500).json({ success: false, message: error.message });
+ 
+  }
+}
+
+
+export const getFeaturedTour = async (req, res) => {
+  try {
+
+
+     
+    
+
+
+    const tours = await Tour.find({featured : true}).limit(8);
 
     res
       .status(200)
