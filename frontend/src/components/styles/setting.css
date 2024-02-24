@@ -1,0 +1,89 @@
+/* .view-btn{
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: .75em;
+    display: inline-block;
+}
+.recipe-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: .5rem;
+    color: var(--text-color);
+    margin-top: .25rem;
+}
+.reciepe-desc{
+    color: var(--text-light);
+    font-size: .9rem;
+    letter-spacing: 1px;
+}
+.view-btn{
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: .75rem;
+    display: inline-block;
+} */
+
+&.d-block{
+    display: block;
+}
+
+.options-container{
+    box-shadow: 0 5px 10px var(--heading-color);
+    padding: 1rem;
+    border-radius: 5px;
+    border-left: 0.5rem solid var(--primary-color);
+    background-color: var(--background-color);
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    width: 50%;
+    margin-left: 300px;
+    .option{
+        height: 3.5rem;
+        width: 3.5rem;
+        box-shadow: 0 3px 6px var(--heading-color);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &.light{
+            background-color: #fff;
+        }
+        &.dark{
+            background-color: rgb(29, 29, 29);
+        }
+        .check{
+            height: 2.5rem;
+            width: 2.5rem;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            /* text-align: center;
+            line-height: 2.5rem; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px var(--heading-color);
+            svg{
+                height: 1.5rem;
+                width: 1.5rem;
+            }
+        }
+        .btn{
+            background-color: orange;
+        }
+        
+    }
+    .btn span{
+        display: inline-block;
+       margin-left: 0.5rem; 
+
+    }
+}
+
+.d-block h2{
+    margin-top: 10px;
+    font-size: 1.75rem;
+    margin-left: 300px;
+}

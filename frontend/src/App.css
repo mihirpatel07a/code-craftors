@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Island+Moments&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+@import '@fortawesome/fontawesome-free/css/all.css';
 
 :root {
   --primary-color: #ff7e01;

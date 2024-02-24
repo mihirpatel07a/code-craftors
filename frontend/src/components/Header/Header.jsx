@@ -16,6 +16,10 @@ const nav__links = [
     path: '/tours',
     display: 'Tours'
   },
+  {
+    path: '/settings',
+    display: 'Settings'
+  },
 
 ]
 const Header = () => {
@@ -67,6 +71,7 @@ const Header = () => {
             <div className="nav__btns d-flex align-items-center gap-4">
               <button className='btn secondary__btn'><Link to='/login'>Login</Link></button>
               <button className='btn primary__btn'><Link to='/register'>Register</Link></button>
+              <button className='btn primary__btn'><Link to='/settings'>Settings</Link></button>
             </div>
             <span className="mobile__menu">
             <i className="ri-menu-line"></i>
