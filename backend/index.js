@@ -24,7 +24,7 @@ mongoose.connect(process.env.MONGO_CONN).then(() => {
 });
 
 app.use('/api/user' , userRouter);
-app.use('/api/auth' , authRouter);
+app.use('/auth' , authRouter);
 app.use('/tours' , tourRouter);
 
 const port = 8080;

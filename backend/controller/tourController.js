@@ -157,3 +157,16 @@ export const getFeaturedTour = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
+
+export const getTourCount = async (req , res)=> {
+
+  try{
+        const getCount = await Tour.estimatedDocumentCount();
+
+        res.status(200).json({success : true , data : getCount});
+  }
+  catch(error)
+  {
+    res.status(500).json({ success: false, message: error.message });
+  }
+}
