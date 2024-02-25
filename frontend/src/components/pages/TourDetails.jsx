@@ -8,6 +8,8 @@ import avatar from '../../assets/images/avatar.jpg'
 import Booking from '../Booking/Booking'
 import useFetch from '../../hooks/useFetch'
 import { BASE_URL } from '../../utils/config'
+// import { AuthContext } from '../../context/AuthContext';
+
 const TourDetails = () => {
 
  
