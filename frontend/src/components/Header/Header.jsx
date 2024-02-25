@@ -3,15 +3,16 @@ import { Container, Row, Button } from 'reactstrap'
 import { NavLink, Link, useNavigate } from 'react-router-dom'
 import logo from '../../assets/images/logo.png';
 import './header.css';
+
+import { AuthContext } from '../../context/AuthContext';
+
+
 const nav__links = [
   {
     path: '/home',
     display: 'Home'
   },
-  // {
-  //   path: '/about',
-  //   display: 'About'
-  // },
+  
   {
     path: '/tours',
     display: 'Tours'
@@ -27,7 +28,13 @@ const Header = () => {
   const headerRef = useRef(null)
   const menuRef = useRef(null);
   const navigate = useNavigate();
-  // const {user, dispatch} = useContext(AuthContext);
+  const {user, dispatch} = useContext(AuthContext);
+
+  const logout = ()=> {
+    dispatch({type : 'LOGOUT'})
+    navigate('/')
+  }
+
   const stickyHeaderFunc = () => {
     window.addEventListener('scroll', () => {
       if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
@@ -71,12 +78,30 @@ const Header = () => {
               </ul>
             </div>
             {/*            menu end    */}
+
+
             <div className="nav__right d-flex align-items-center gap-4">
               <div className="nav__btns d-flex align-items-center gap-4">
-                <button className='btn primary__btn'><Link to='/login'>Login</Link></button>
-                <button className='btn primary__btn'><Link to='/register'>Register</Link></button>
-                {/* <button className='btn primary__btn'><Link href='/settings'>Settings</Link></button> */}
 
+{
+    user ?  (<>
+  <h5 className='mb-0'>{user.username}</h5>
+    <button className='btn btn-dark' onClick={logout} >Logout</button>
+    </>
+    )
+   : 
+  (   <>
+ <button className='btn primary__btn'><Link to='/login'>Login</Link></button>
+                <button className='btn primary__btn'><Link to='/register'>Register</Link></button>
+              
+
+    </>
+    )
+        
+
+}
+
+           
               </div>
               <span className="mobile__menu" onClick={toggleMenu}>
                 <i className="ri-menu-line"></i>
