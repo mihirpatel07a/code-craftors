@@ -8,6 +8,7 @@ import authRouter from './routes/authRouter.js';
 import tourRouter from './routes/tours.js';
 import bodyparser from 'body-parser';
 import reviewRouter from './routes/review.js';
+import bookingRouter from './routes/bookings.js';
 
 const corsOptions = {
     origin : true , 
@@ -37,7 +38,7 @@ app.use('/api/v1/users' , userRouter);
 app.use('/api/v1/auth' , authRouter);
 app.use('/api/v1/tours' , tourRouter);
 app.use('/api/v1/review' , reviewRouter);
-
+app.use('/api/v1/booking' , bookingRouter);
 const port = 8080;
 
 
