@@ -48,3 +48,47 @@
 .btn.primary__btn a{
     background-color: var(--secondary-color);
 }
+
+@media only screen and (max-width: 992px) {
+    .logo img{
+        width: 20%;
+    }
+    .navigation {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.411);
+        z-index: 999;
+        display: none;
+        /* margin-left: -10px; */
+    }
+    .menu{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: #fff;
+        flex-direction: column;
+        line-height: 0.5rem;
+        width: calc(100% - 75%);
+        justify-content: center;
+        z-index: 9999;
+    }
+    .show__menu{
+        display: block;
+    }
+    .mobile__menu{
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .logo img{
+        width: 45%;
+    }
+    .menu{
+        width: calc(100% - 50%);
+    }
+}
