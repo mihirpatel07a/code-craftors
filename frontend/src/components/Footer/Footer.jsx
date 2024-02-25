@@ -51,7 +51,7 @@ const Footer = () => {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
               Commodi, enim.
             </p>
-            <div className="social__links d-flex align-items-center gap-4">
+            <div className="social__links d-flex align-items-center gap-4"  style={{"backgroundColor" : "var(--background-light)"}}>
                 <span>
                   <Link to='#'><i class="ri-youtube-line"></i></Link>
                 </span>
@@ -74,7 +74,7 @@ const Footer = () => {
           <ListGroup className='footer__quick-links'>
             {
               quick__links.map((item, index) => (
-                <ListGroupItem key={index} className='ps-0 border-0'>
+                <ListGroupItem key={index} className='ps-0 border-0' style={{"backgroundColor" : "var(--background-light)"}}>
 
                   <Link to={item.path}>{item.display}</Link>
                 </ListGroupItem>
@@ -89,7 +89,7 @@ const Footer = () => {
 <ListGroup className='footer__quick-links'>
   {
     quick__links2.map((item, index) => (
-      <ListGroupItem key={index} className='ps-0 border-0'>
+      <ListGroupItem key={index} className='ps-0 border-0'  style={{"backgroundColor" : "var(--background-light)"}}>
 
         <Link to={item.path}>{item.display}</Link>
       </ListGroupItem>
@@ -102,7 +102,7 @@ const Footer = () => {
         <h5 className='footer__link-title'>Contact</h5>
 
 <ListGroup className='footer__quick-links'>
-      <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
+      <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'  style={{"backgroundColor" : "var(--background-light)"}}>
 
        <h6 className='mb-0 d-flex align-items-center gap-2'>
         <span><i class="ri-map-pin-line"></i></span>
@@ -111,7 +111,7 @@ const Footer = () => {
        <p className='mb-0'>Sylhet, Bangladesh</p>
       </ListGroupItem>
     
-      <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
+      <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'  style={{"backgroundColor" : "var(--background-light)"}}>
 
 <h6 className='mb-0 d-flex align-items-center gap-2'>
  <span><i class="ri-phone-fill"></i></span>
@@ -120,7 +120,7 @@ const Footer = () => {
 <p className='mb-0'>+0123456789</p>
 </ListGroupItem>
 
-<ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
+<ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'  style={{"backgroundColor" : "var(--background-light)"}}>
 
 <h6 className='mb-0 d-flex align-items-center gap-2'>
  <span><i class="ri-mail-line"></i></span>
