@@ -4,6 +4,8 @@
 } */
 
 
+
+
 .hero__subtitle img {
     width: 2.3rem;
     height: 2.3rem;
@@ -14,12 +16,12 @@
     font-weight: 600;
     margin-top: 1rem;
     margin-bottom: 2rem;
-    color: var(--heading-color);
+    color: var(--primary-color);
 
 }
 
 .hero__content h1 .highlight{
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .hero__content p {
@@ -47,7 +49,7 @@
 .services__subtitle{
     font-size: 2.2rem;
     font-weight: 500;
-    color: #ee6e6e;
+    color: var(--primary-color);
     font-family: var(--subtitle-font-name);
 }
 
