@@ -24,22 +24,25 @@
     margin-top: .75rem;
     display: inline-block;
 } */
-
-&.d-block{
-    display: block;
+.parent-selector {
+    &.d-block{
+        display: block;
+    }
 }
+
 
 .options-container{
     box-shadow: 0 5px 10px var(--heading-color);
     padding: 1rem;
     border-radius: 5px;
     border-left: 0.5rem solid var(--primary-color);
-    background-color: var(--background-color);
+    background-color: var(--background-light);
     margin-top: 1rem;
     display: flex;
     gap: 1rem;
     width: 50%;
     margin-left: 300px;
+    margin-bottom: 10px;
     .option{
         height: 3.5rem;
         width: 3.5rem;
@@ -86,4 +89,5 @@
     margin-top: 10px;
     font-size: 1.75rem;
     margin-left: 300px;
+    color: var(--text-color)
 }

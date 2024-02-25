@@ -1,14 +1,74 @@
 import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import '../styles/setting.css'
+import '../styles/setting.scss'
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import { Button } from "reactstrap";
 
 
 export default function Settings(){
+    const [settings, setSettings] = useState({
+        "--background-color": "#ffffff",
+        "--background-light": "#ffffff",
+        "--primary-color": "#ff7e01",
+        "--shadow-color": "rgba(0, 0, 0, 0.2)",
+        "--text-color": "#6e7074",
+        "--text-light": "#575757",
+        "--font-size": "16px",
+        "--animation-speed": 1
+    })
+    useEffect(() =>{
+        const root = document.getElementById('root')
+        for(let key in settings){
+            root.style.setProperty(key, settings[key])
+            // document.documentElement.style.setProperty(key, settings[key]);
+
+        }
+    },[settings])
     const [theme, setTheme] = useState("light")
+    const themes = [
+        {
+            "--background-color": "#fff",
+            "--background-light": "#fff",
+            "--shadow-color": "rgba(0, 0, 0, 0.2)",
+            "--text-color": "#6e7074",
+            "--text-light": "#575757",
+        },
+        {
+            "--background-color": "rgb(29, 29, 29)",
+            "--background-light": "rgb(77, 77, 77)",
+            "--shadow-color": "rgba(0, 0, 0, 0.2)",
+            "--text-color": "#ffffff",
+            "--text-light": "#eceaea",
+        },
+    ]
+
+    function changeTheme(i){
+        const _theme = {...themes[i]}
+        setTheme(i === 0 ? "light" : "dark")
+        let _settings = {...settings}
+        for(let key in _theme){
+            _settings[key] = _theme[key]
+        }   
+        setSettings(_settings)
+    }
+
+    function changeColor(i){
+        const _color = primaryColors[i]
+        let _settings = {...Settings}
+        _settings["--primary-color"] = _color
+        setPrimaryColor(i)
+        setSettings(_settings)
+    }
+
+    // function changeFontSize(i){
+    //     const _size = fontSizes[i]
+    //     let _settings = {...Settings}
+    //     _settings["--font-size"] = _size.value
+    //     setFontSize(i)
+    //     setSettings(_settings)
+    // }
     const primaryColors = [
         "var(--primary-color)",
         "rgb(255, 0, 86)",
@@ -17,51 +77,51 @@ export default function Settings(){
         "rgb(0, 200, 83)",
         "rgb(156, 39, 176)",
     ]
-    const fontSizes = [
-        {
-            title: "Small",
-            value: "12px"
-        },
-        {
-            title: "Medium",
-            value: "16px"
-        },
-        {
-            title: "Large",
-            value: "20px"
-        }
-    ]
+    // const fontSizes = [
+    //     {
+    //         title: "Small",
+    //         value: "12px"
+    //     },
+    //     {
+    //         title: "Medium",
+    //         value: "16px"
+    //     },
+    //     {
+    //         title: "Large",
+    //         value: "20px"
+    //     }
+    // ]
 
-    const animationSpeeds = [
-        {
-            title: "Slow",
-            value: 2
-        },
-        {
-            title: "Medium",
-            value: 1
-        },
-        {
-            title: "Fast",
-            value: .5
-        }
-    ]
+    // const animationSpeeds = [
+    //     {
+    //         title: "Slow",
+    //         value: 2
+    //     },
+    //     {
+    //         title: "Medium",
+    //         value: 1
+    //     },
+    //     {
+    //         title: "Fast",
+    //         value: .5
+    //     }
+    // ]
     const [primaryColor, setPrimaryColor] = useState(0) 
-    const [fontSize, setFontSize] = useState(1)
+    // const [fontSize, setFontSize] = useState(1)
     
     return (
-        <div>
+        <div className="parent-selector">
             <div className="section d-block">
-            <h2>Primary color</h2>
+            <h2>Primary theme</h2>
             <div className="options-container">
-                <div className="option light">
+                <div className="option light" onClick={() => changeTheme(0)}>
                     { theme === "light" && (
                         <div className="check">
                         <FontAwesomeIcon icon={faCheck}/>
                     </div> 
                     )}
                 </div>
-                <div className="option dark">
+                <div className="option dark" onClick={() => changeTheme(1)}>
                 { theme === "dark" && (
                         <div className="check">
                         <FontAwesomeIcon icon={faCheck}/>
@@ -72,11 +132,11 @@ export default function Settings(){
         </div>
 
          <div className="section d-block">
-            <h2>Preferred theme</h2>
+            <h2>Preferred color</h2>
              <div className="options-container">
                 
                 { primaryColors.map((color, index) => (
-                      <div className="option light" style={{backgroundColor: color}}>
+                      <div className="option light" style={{backgroundColor: color}} onClick={() => changeColor(index)}>
                       { primaryColor === index && (
                           <div className="check">
                           <FontAwesomeIcon icon={faCheck}/>
@@ -91,13 +151,13 @@ export default function Settings(){
              
         </div>
         
-        <div className="section d-block">
+        {/* <div className="section d-block">
             <h2>Font size</h2>
              <div className="options-container">
                 
                 { fontSizes.map((size, index) => (
                
-                <button className="btn" style={{backgroundColor : "var(--primary-color)"}}>
+                <button className="btn" onClick={() => changeFontSize(index)}style={{backgroundColor : "var(--primary-color)"}}>
                     {size.title}
                 
                 { fontSize === index && <span><FontAwesomeIcon icon={faCheck}/></span>
@@ -109,8 +169,8 @@ export default function Settings(){
 
              
         </div>
-
-        <div className="section d-block">
+{/*  */}
+        {/* <div className="section d-block">
             <h2>Animation speed</h2>
              <div className="options-container">
                 
@@ -127,7 +187,7 @@ export default function Settings(){
              </div> 
 
              
-        </div>
+        </div> */} 
 
     </div>
     )

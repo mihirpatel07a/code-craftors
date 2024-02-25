@@ -3,6 +3,15 @@
 @import '@fortawesome/fontawesome-free/css/all.css';
 
 :root {
+  --background-color: #fff;
+  --background-light: #fff;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --animation-speed: 1;
+  --font-size: 16px;
+  --text-light: #575757;
+
+
+
   --primary-color: #ff7e01;
   --secondary-color: #faa935;
   --heading-color: #0b2727;
@@ -15,6 +24,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: var(--background-light);
+  color: var(--primary-color);
+
 }
 
 body {
@@ -37,16 +49,18 @@ h6 {
 a {
   text-decoration: none;
   color: unset;
+  // background-color: var(--secondary-color);
 }
 ul {
   list-style: none;
 }
 
 .primary__btn {
-  background: var(--secondary-color) !important;
+  background: var(--secondary-color);
   border: none !important;
   border-radius: 50px !important;
   padding: 0.4rem 1.5rem !important;
+  color: var(--primary-color); 
 }
 
 .primary__btn a {
@@ -56,6 +70,7 @@ ul {
 }
 .primary__btn a:hover {
   color: inherit;
+
 }
 .secondary__btn {
   background: transparent !important;
