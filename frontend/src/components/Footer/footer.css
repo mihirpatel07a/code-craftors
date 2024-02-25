@@ -21,18 +21,21 @@
 }
 
 .footer__link-title{
-    color: var(--heading-color);
+    color: var(--primary-color);
     margin-bottom: 1rem;
 
 }
-
+.footer__quick-links li{
+    background-color: white;
+}
 .footer__quick-links li a{
     text-decoration: none;
-    color: var(--text-color);
+    background-color: white;
     font-size: 1.1rem;
 }
 
 .footer__quick-links h6 span i{
+    background-color: white;
     color: var(--secondary-color);
     font-size: 1.1rem;
 

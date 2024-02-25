@@ -4,6 +4,8 @@
 } */
 
 
+
+
 .hero__subtitle img {
     width: 2.3rem;
     height: 2.3rem;
@@ -14,12 +16,12 @@
     font-weight: 600;
     margin-top: 1rem;
     margin-bottom: 2rem;
-    color: var(--heading-color);
+    color: var(--primary-color);
 
 }
 
 .hero__content h1 .highlight{
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .hero__content p {
@@ -47,7 +49,7 @@
 .services__subtitle{
     font-size: 2.2rem;
     font-weight: 500;
-    color: #ee6e6e;
+    color: var(--primary-color);
     font-family: var(--subtitle-font-name);
 }
 
@@ -120,4 +122,39 @@
 .testimonial__title{
     font-size: 2.3rem;
     margin-top: 1rem;
+}
+
+@media only screen and (max-width: 992px) {
+    .hero__content h1{
+        font-size: 2.7rem;
+    }
+    .hero__img-box{
+        display: none;
+    }
+    .hero__video-box{
+        display: block;
+    }
+    .services__title, 
+    .featured__tour-title,
+    .gallery__title,
+    .testimonial__title,
+    .experience__content h2{
+        font-size: 2rem;
+    }
+
+    .experience__img{
+        margin-top: 2rem;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .hero__content h1{
+        font-size: 1.8rem;
+    }
+
+    .services__title,
+    .featured__tour-title
+    {
+        font-size: 1.5rem;
+    }
 }

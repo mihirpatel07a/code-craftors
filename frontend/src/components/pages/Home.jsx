@@ -13,7 +13,6 @@ import ServiceList from '../services/ServiceList';
 import FeaturedTourList from '../../components/Featured-tours/FeaturedTourList';
 import Testimonials from '../../components/Testimonial/Testimonials';
 import Newsletter from '../shared/Newsletter';
-import './setting';
 const Home = () => {
   return <>
     {/*     hero section start     */}
@@ -37,7 +36,7 @@ const Home = () => {
           </Col>
           <Col lg='2'>
             <div className="hero__img-box mt-4">
-              <video src={heroVideo} alt='' controls></video>
+              <video src={heroVideo} alt='' muted autoPlay></video>
             </div>
           </Col>
           <Col lg='2'>
