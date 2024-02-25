@@ -44,3 +44,7 @@
     box-shadow: 3px 3px 8px -3px #ddd;
     z-index: 999;
 }
+
+.btn.primary__btn a{
+    background-color: var(--secondary-color);
+}

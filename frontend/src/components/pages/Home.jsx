@@ -13,6 +13,7 @@ import ServiceList from '../services/ServiceList';
 import FeaturedTourList from '../../components/Featured-tours/FeaturedTourList';
 import Testimonials from '../../components/Testimonial/Testimonials';
 import Newsletter from '../shared/Newsletter';
+import './setting';
 const Home = () => {
   return <>
     {/*     hero section start     */}
