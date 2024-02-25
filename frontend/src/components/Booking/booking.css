@@ -72,6 +72,7 @@
 .booking__bottom li span{
     font-size: 1rem;
     color: var(--text-color);
+    /* color : black; */
     font-weight: 500;
 }
 

@@ -5,7 +5,7 @@ import { verifyUSer } from '../verifyToken.js';
 const router = express.Router();
 
 
-router.post('/' ,verifyUSer , createBooking);
-router.get('/:id' , verifyUSer , gateBooking);
-router.get('/' , verifyUSer , gateallBooking);
+router.post('/'  , createBooking);
+router.get('/:id'  , gateBooking);
+router.get('/' , gateallBooking);
 export default router;

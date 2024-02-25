@@ -5,10 +5,14 @@ import {Form, FormGroup, ListGroup, ListGroupItem, Button } from 'reactstrap'
 import { useNavigate } from 'react-router-dom'
 import  { AuthContext } from '../../context/AuthContext'
 import { BASE_URL } from '../../utils/config'
+
+
   const Booking = ({tour, avgRating}) => {
     const navigate = useNavigate()
     const {price, reviews, title} = tour
     const {user} = useContext(AuthContext)
+
+
     const [booking, setBooking] = useState({
         userId: user && user._id,
         userEmail: user && user.email,
@@ -18,6 +22,8 @@ import { BASE_URL } from '../../utils/config'
         guestSize:1,
         bookAt:''
     })
+
+     
     const handleChange = e =>{
         setBooking(prev=>({...prev, [e.target.id]:e.target.value}))
     };
@@ -38,7 +44,7 @@ import { BASE_URL } from '../../utils/config'
                 headers:{
                     'content-type':'application/json'
                 },
-                credentials:'include',
+                // credentials:'include',
                 body:JSON.stringify(booking)
             })
 
