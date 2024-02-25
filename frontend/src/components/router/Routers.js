@@ -9,7 +9,7 @@ import Tours from './../pages/Tours';
 import TourDetails from './../pages/TourDetails';
 import SearchResultList from '../pages/SearchResultList';
 import ThankYou from '../../components/pages/ThankYou';
-import About from '../pages/About';
+// import About from '../pages/About';
 const Routers = () => {
   return (
     <Routes>
@@ -23,7 +23,7 @@ const Routers = () => {
         <Route path='/thank-you' element={<ThankYou/>} />
         <Route path='/tours/:id' element={<TourDetails/>} />
         <Route path='/tours/search' element={<SearchResultList/>} />
-        <Route path='/about' element={<About/>} />
+        {/* <Route path='/about' element={<About/>} /> */}
     </Routes>
   )
 }
