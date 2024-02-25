@@ -42,8 +42,8 @@ const SearchBar = () => {
 
   return (
     <Col lg='12'>
-      <div className='search__bar'>
-        <Form className='d-flex align-items-center gap-4'>
+      <div className='search__bar' style={{"borderBlockColor":"var(--primary-color)"}}>
+        <Form className='d-flex align-items-center gap-4' >
           <FormGroup className='d-flex gap-3 form__group form__group-fast'>
             <span>
               <i className='ri-map-pin-line'></i>
