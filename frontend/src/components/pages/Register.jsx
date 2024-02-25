@@ -1,11 +1,12 @@
 
-import React, {useState} from 'react'
+import React, {useState , useContext} from 'react'
 import { Container, Row, Col, Form, FormGroup, Button } from 'reactstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import '../styles/login.css'
 
 import registerImg from '../../assets/images/register.png'
 import userIcon from '../../assets/images/user.png'
+import { AuthContext, AuthContextProvider } from '../../context/AuthContext'
 // import { AuthContext } from './../context/AuthContext'
 // import { BASE_URL } from './../utils/config'
 const SignUp = () => {
@@ -16,9 +17,11 @@ const SignUp = () => {
     password:'',
   });
 
+  const {dispatch} = useContext(AuthContext);
+
   // const {dispatch} = useContext(AuthContext)
   const navigate = useNavigate()
-  const handleChange = e => {
+  const handleChange = async (e) => {
     setCredentials(prev => ({ ...prev, [e.target.id]: e.target.value}))
   };
 
