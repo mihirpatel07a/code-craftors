@@ -15,16 +15,16 @@
 
 .nav__item a{
     text-decoration: none;
-    color: var(--heading-color);
+    color: var(--primary-color);
     font-weight: 500;
     font-size: 1.1rem;
 }
 .nav__item a:hover{
-    color: inherit;
+    text-decoration: underline;
 }
 
 .nav__item a.active__link{
-    color: var(--secondary-color);
+    text-decoration: underline;
 }
 
 .mobile__menu{
@@ -45,6 +45,9 @@
     z-index: 999;
 }
 
+.btn.primary__btn {
+    background-color: var(--primary-color);
+}
 .btn.primary__btn a{
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
 }
