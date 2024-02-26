@@ -1,0 +1,18 @@
+.create-tour-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .create-tour-container input,
+  .create-tour-container label {
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .create-tour-container .btn {
+    width: 100%;
+  }
+  

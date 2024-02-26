@@ -1,14 +1,28 @@
 import Tour from "../models/Tour.js";
 
 export const createTour = async (req, res) => {
-  const newTour = new Tour(req.body);
+  // Validate request body
+  const { maxGroupSize, desc, ...rest } = req.body;
+
+  if (!maxGroupSize || !desc) {
+    return res.status(400).json({
+      success: false,
+      message: "maxGroupSize and desc are required fields.",
+    });
+  }
+
+  const newTour = new Tour({
+    maxGroupSize,
+    desc, // Assuming this is the description field in your Tour model
+    ...rest,
+  });
 
   try {
     const savedTour = await newTour.save();
 
-    res.status(200).json({
+    res.status(201).json({
       success: true,
-      message: "successfully created",
+      message: "Successfully created",
       data: savedTour,
     });
   } catch (error) {

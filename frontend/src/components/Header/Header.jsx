@@ -34,6 +34,12 @@ const admin_nav__links = [
     path: '/admin/users',
     display: 'Users'
   },
+  {
+    path: '/admin/createTour',
+    display: 'Create Tour'
+  },
+
+
 ];
 
 const Header = () => {

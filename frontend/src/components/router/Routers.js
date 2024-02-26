@@ -14,6 +14,9 @@ import { AuthContext } from "../../context/AuthContext";
 import Temp from "../Admin/AdminHome";
 import AdminTours from "../Admin/AdminTours";
 import AdminUsers from "../Admin/AdminUsers";
+import AdminHome from "../Admin/AdminHome";
+import CreateTour from "../Admin/CreateTour";
+
 
 const Routers = () => {
   const { user } = useContext(AuthContext);
@@ -37,8 +40,11 @@ const Routers = () => {
       <Route path="/thank-you" element={<ThankYou />} />
       <Route path="/tours/:id" element={<TourDetails />} />
       <Route path="/tours/search" element={<SearchResultList />} />
+      
+      <Route path="/admin/home" element={<AdminHome />} />
       <Route path="/admin/tours" element={<AdminTours />} />
       <Route path="/admin/users" element={<AdminUsers />} />
+      <Route path="/admin/createTour" element={<CreateTour />} />
       
 
     </Routes>

@@ -4,7 +4,7 @@ import { verifyAdmin } from '../verifyToken.js';
 
 const router = express.Router()
 
-router.post('/', verifyAdmin , createTour);
+router.post('/' , createTour);
 router.get('/' , getallTours);
 router.get('/:id' , getsingleTour);
 router.get('/search/getTourbySearch' , getTourBySearch);
