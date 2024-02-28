@@ -106,3 +106,17 @@ export const getallUsers = async (req, res) => {
   }
 };
 
+
+export const getUserCount = async (req , res)=>{
+    try{
+
+       const usercount  = await User.estimatedDocumentCount();
+       
+       res.status(200).json({success : true , data : usercount});
+    }
+    catch(err)
+    {
+      res.status(401).json({success : false , message : err.message});
+    }
+    
+}
