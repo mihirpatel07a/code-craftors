@@ -16,6 +16,7 @@ import AdminTours from "../Admin/AdminTours";
 import AdminUsers from "../Admin/AdminUsers";
 import AdminHome from "../Admin/AdminHome";
 import CreateTour from "../Admin/CreateTour";
+import UpdateTour from "../Admin/UpdateTour";
 
 
 const Routers = () => {
@@ -45,6 +46,7 @@ const Routers = () => {
       <Route path="/admin/tours" element={<AdminTours />} />
       <Route path="/admin/users" element={<AdminUsers />} />
       <Route path="/admin/createTour" element={<CreateTour />} />
+      <Route path="/admin/update/:id" element={<UpdateTour />} />
       
 
     </Routes>

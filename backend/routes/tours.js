@@ -10,8 +10,8 @@ router.get('/:id' , getsingleTour);
 router.get('/search/getTourbySearch' , getTourBySearch);
 router.get('/search/getFeaturedTours' , getFeaturedTour);
 router.get('/search/getCount' , getTourCount);
-router.put('/:id', verifyAdmin  , updateTour);
-router.delete('/:id',verifyAdmin ,  deleteTour);
+router.put('/:id'  , updateTour);
+router.delete('/:id' ,  deleteTour);
 
  
 

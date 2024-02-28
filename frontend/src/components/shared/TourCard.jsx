@@ -1,14 +1,44 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Card, CardBody } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import './tour-card.css';
 import calculateAvgRating from '../../../src/utils/avgRating';
+import { AuthContext } from "../../context/AuthContext";
+import { BASE_URL } from "../../utils/config";
+
+
+
 const TourCard = ({tour}) => {
 
     const {_id, title, city, photo, price, featured, reviews} = tour
 
     const {totalRating, avgRating} = calculateAvgRating(reviews)
 
+    const {user} = useContext(AuthContext);
+    
+    const deletetour = async() => {
+       try{
+             const res = await fetch(`${BASE_URL}/tours/${_id}`, {
+             method : "DELETE"
+             })
+
+             if(!res.ok) 
+             {
+                alert(res.message);
+             }
+
+             alert("successfully deleted");
+             window.location.reload();
+              
+             
+
+       }
+       catch(err)
+       {
+          console.log(err.message);
+       }
+
+    }
    
 
   return (
@@ -40,9 +70,29 @@ const TourCard = ({tour}) => {
         <div className="card__bottom d-flex align-items-center justify-content-between mt-3">
             <h5>${price} <span> /per person</span></h5>
 
-            <button className="btn booking__btn">
-                <Link to={`/tours/${_id}`}>Book Now</Link>
-            </button>
+
+           {user && user.email !== "admin@gmail.com" && (
+   <button className="btn booking__btn ">
+   <Link to={`/tours/${_id}`}>Book Now</Link>
+</button>
+           )}
+         
+
+            {user && user.email === "admin@gmail.com" && (
+
+              <>
+   <button className="btn booking__btn" onClick={deletetour}>
+              Delete
+          </button>
+          
+              <button className="btn booking__btn" >
+              <Link to={`/admin/update/${_id}`}>Update</Link>
+          </button>
+
+              </>
+           
+            )}
+            
         </div>
       </CardBody>
       </Card>
